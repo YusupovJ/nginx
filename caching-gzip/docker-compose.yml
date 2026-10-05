@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: prod
+    container_name: gzip-frontend
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf"
+    ports:
+      - "80:80"
