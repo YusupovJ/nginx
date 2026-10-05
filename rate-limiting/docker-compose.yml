@@ -1,0 +1,17 @@
+services:
+  server:
+    build: ./server
+    container_name: rate-server
+    networks:
+      - nginx-net
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    networks:
+      - nginx-net
+
+
+networks:
+  nginx-net:
