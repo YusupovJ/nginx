@@ -1,0 +1,29 @@
+services:
+  server1:
+    build: ./server
+    container_name: server1
+    networks:
+      - nginx-net
+
+  server2:
+    build: ./server
+    container_name: server2
+    networks:
+      - nginx-net
+
+  server3:
+    build: ./server
+    container_name: server3
+    networks:
+      - nginx-net
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    networks:
+      - nginx-net
+
+
+networks:
+  nginx-net:
